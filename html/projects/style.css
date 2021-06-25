@@ -1,0 +1,108 @@
+/* Projects cards */
+.wrappers{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    width: min(300px, 100%);
+    margin: auto;
+}
+.wrappers .box
+{
+    position: relative;
+    width: 100%;
+    height: 300px;
+    color: rgb(255,255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.1s ease-in-out;
+    font-family: var(--primary-text-font);
+    border-radius: 1.5em;
+}
+.wrappers .box:hover
+{
+    transform: scale(1.025);
+}
+.wrappers .box::before
+{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: max(100%);
+    border-radius: 1.5em;
+    background: linear-gradient(45deg,var(--primary-text-color), rgb(245, 222, 136));
+}
+.wrappers .box::after
+{
+    content: '';
+    position: absolute;
+    border-radius: 1.5em;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: max(100%);
+    border-radius: 1.5em;
+    background: linear-gradient(45deg,var(--primary-text-color), rgb(245, 222, 136));
+    filter: blur(20px);
+}
+.wrappers .box span
+{
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    right: 6px;
+    bottom: 6px;
+    background: black;
+    z-index: 2;
+    opacity: 0.6;
+    border-radius: 1.5em;
+}
+.wrappers .box span::before
+{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: white;
+    opacity: 0.1;
+    pointer-events: none;
+}
+.wrappers .box .content
+{
+    position: relative;
+    z-index: 3;
+    padding: 20px 40px;
+    background: none;
+}
+.wrappers .box .content h2
+{
+    font-size: clamp(0.65rem, 1.2vw, 2rem);
+    background: none;
+    color: rgb(245, 222, 136);
+}
+.wrappers .box .content p
+{
+    line-height: 1.4em;
+    margin-bottom: 10px;
+    background: none;
+    font-size: clamp(0.65rem, 1.2vw, 1rem);
+}
+.wrappers .box .content a
+{
+    display: block;
+    color: black;
+    font-size: clamp(0.65rem, 1.2vw, 1.1rem);
+    background: white;
+    padding: 5px 10px;
+    text-decoration: none;
+    width: minmax(30px, 20px);
+}
+.wrappers .box .content a:hover{
+    background:var(--primary-text-color);
+}

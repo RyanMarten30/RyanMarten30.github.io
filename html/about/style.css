@@ -1,0 +1,302 @@
+@import url('https://fonts.googleapis.com/css2?family=Goldman:wght@400;700&display=swap');
+
+/* My global var*/
+:root{
+    --primary-text-color: rgb(204, 160, 0);
+    --primary-link-color: rgb(0, 53, 102);
+    --primary-text-font: 'Goldman';
+    --logo-font: 'Satisfy', cursive;
+    --footer-color: rgb(0, 8, 20); 
+    --header-color: rgb(245, 204, 0);
+}
+
+/* Default body */
+*,
+*::before, 
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body{
+    position: relative;
+    margin: 0;
+}
+
+/* Header styling */
+header{
+    position: relative;
+    margin-top: 10px;
+    width: 100%;
+    height: 15vh;
+}
+
+header h2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--primary-text-font);
+    font-size: clamp(1.7rem, 3.1vw, 2.4rem );
+    border-bottom: 1px solid var(--primary-link-color);
+}
+
+/* Navigation*/
+
+nav{
+    background: var(--footer-color);
+    display: none;
+    display: relative;
+    width: 100%;
+    margin: auto;
+}
+
+nav ul{
+    width: 85%;
+    margin: 10px auto;
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-wrap: nowrap;
+    gap:1.65em;
+    vertical-align: center;
+}
+
+nav li{  
+    border: 2px solid var(--primary-link-color);
+    font-family: var(--primary-text-font);
+    background-image: url(./img/background2.jpg);
+    background-size: contain;
+    margin-bottom: 4px;
+}
+
+nav li:last-child{
+    margin-right: 8px;
+}
+
+nav li:hover{
+    background-color: white;
+    transform: scale(1.5);
+    border: 1px white solid;
+    border-radius: 1.5em;
+}
+
+nav a{
+    font-size: clamp(1rem, 3.1vw, 1.5rem);;
+    color: white;
+    text-decoration: none;
+    font-family: var(--primary-text-font);
+}
+
+nav a:hover{
+    color: var(--primary-text-color);
+}
+
+/* 
+    Toggle styling css only
+*/
+.nav-toggle{
+    display: none;
+}
+
+.nav-toggle:checked ~ nav{
+    display: flex;
+}
+
+.nav-toggle-label{
+    position: absolute;
+    top: 0px;
+    left: 10px;
+    display: flex;
+    align-items: flex-start;
+    height: 10%;
+    cursor: pointer;
+    margin-top:15px
+}
+
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after{
+    display: block;
+    background-color: var(--footer-color);
+    height: 3px;
+    width: 2em;
+    border-radius: 2em;
+    position: relative;
+}
+
+.nav-toggle-label span::before,
+.nav-toggle-label span::after{
+    content:"";
+    position: absolute;
+    height: 3px;
+}
+
+.nav-toggle-label span::before{
+    bottom: 7px;
+}
+
+.nav-toggle-label span::after{
+    top: 7px;
+}
+
+/* About me grid */
+
+.about-me-grid{
+    display: grid;
+    grid-template: 
+        "ps cocktails fich" 
+        "rain fr sun"
+        "xbox water ie" / minmax(min-content, 1fr) minmax(min-content, 1fr) minmax(min-content, 1fr);
+    grid-template-rows: auto;
+    gap: 1rem;
+    height: min(50vh, 10%);
+    padding: 0.85rem;
+    width: 100%;
+    border-radius: 1.5em;
+    box-shadow: 0px 0px 6px 5px  #003566;
+    margin-bottom: 1.5em;
+    margin-top: 1.5em;
+    background-image: url(../../img/background2.jpg);
+    background-attachment: fixed ;
+    text-align: center;
+    height: 70vh;
+}
+
+.ps{
+    grid-area: ps;
+    border-right: 1px solid white;
+    border-bottom: 1px solid white;
+    color: green;
+    background-image: url(../../img/playstation.jpg);
+    max-width: 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-blend-mode: luminosity;
+    padding:1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.empty{
+    grid-area: fr;
+    border: 1px solid white;
+}
+
+.fich{
+    grid-area: fich;
+    border-bottom: 1px solid white;
+    border-left: 1px solid white;
+    color: green;
+    background-image: url(../../img/fich.jpeg);
+
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-blend-mode: luminosity;
+    padding:1em;
+    display: flex;
+    justify-content: center;
+}
+
+.sun{
+    grid-area: sun;
+    border-bottom: 1px solid white;
+    border-left: 1px solid white;
+    border-top: 1px solid white;
+    color: green;
+    background-image: url(../../img/sun.jpg);
+    max-width: 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-blend-mode: luminosity;
+    padding:1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ie{
+    grid-area: ie;
+    border-left: 1px solid white;
+    border-top: 1px solid white;
+    color: red;
+    background-image: url(../../img/ie.jpeg);
+    max-width: 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-blend-mode: luminosity;
+    padding:1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rain{
+    grid-area: rain;
+    border-bottom: 1px solid white;
+    border-top: 1px solid white;
+    border-right: 1px solid white;
+    color: red;
+    background-image: url(../../img/rain.jpeg);
+    max-width: 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-blend-mode: luminosity;
+    padding:1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cocktails{
+    grid-area: cocktails;
+    border-right: 1px solid white;
+    border-left: 1px solid white;
+    border-bottom: 1px solid white;
+    color: red;
+    background-image: url(../../img/cocktails.jpg);
+    max-width: 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-blend-mode: luminosity;
+    padding:1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.water{
+    grid-area: water;
+    border-left: 1px solid white;
+    border-top: 1px solid white;
+    border-right: 1px solid white;
+    color: green;
+    background-image: url(../../img/water.jpg);
+    max-width: 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-blend-mode: luminosity;
+    padding:1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.xbox{
+    grid-area: xbox;
+    border-top: 1px solid white;
+    border-right: 1px solid white;
+    color: red;
+    background-image: url(../../img/xbox.jpeg);
+    max-width: 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-blend-mode: luminosity;
+    padding:1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
