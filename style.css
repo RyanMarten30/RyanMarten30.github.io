@@ -48,7 +48,6 @@ nav{
     display: none;
     display: relative;
     width: 100%;
-    margin: 1.5em auto;
 }
 
 nav ul{
@@ -102,7 +101,6 @@ nav a:hover{
 
 .nav-toggle:checked ~ nav{
     display: flex;
-    margin: 1.5em auto;
 }
 
 .nav-toggle-label{
@@ -145,7 +143,7 @@ nav a:hover{
 /* Main */
 main{
     position: relative;
-    margin: 0 auto;
+    margin: 3.5em auto;
     width: 85%;
 }
 
@@ -212,6 +210,7 @@ main{
         width: 100%;
         border-radius: 1.5em;
         box-shadow: 0px 0px 6px 5px  #003566;
+        margin: 1.5em auto;
     }
 
     .intro-title{
