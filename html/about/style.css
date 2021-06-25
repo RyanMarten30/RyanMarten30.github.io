@@ -159,7 +159,7 @@ nav a:hover{
     grid-template: 
         "img title"
         "img content" / minmax(min-content, 2fr) minmax(min-content, 4fr);
-    background-image: url("./img/background2.jpg");  
+    background-image: url("../../img/background2.jpg");  
     background-attachment: fixed;   
     height: min(50vh, 10%);
     grid-column-gap: 1.5em;
@@ -209,7 +209,7 @@ nav a:hover{
         grid-template: 
             "title"
             "content" / auto ;
-        background-image: url(../../img/background2.jpg);        
+        background-image: url("../../img/background2.jpg");        
         height: min(50vh, 10%);
         grid-column-gap: 1.5em;
         padding: 1.25rem;
