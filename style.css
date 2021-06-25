@@ -280,9 +280,10 @@ main{
     display: grid;
     grid-template:
         "prof"
-        "study";
+        "study"/ minmax(10px, auto);
     gap: .5em;
     height: 100%;
+    max-width: 100%;
 }
 
 .work-experience{
@@ -293,7 +294,7 @@ main{
     align-items: center;
     justify-content: center;
     color: var(--primary-link-color);
-    font-size: 1.5rem;
+    font-size: clamp(1.5rem, 1.1vw, 3rem);
     font-weight: bolder;
     text-decoration: none;
     border-radius: 1.5rem;
@@ -305,7 +306,7 @@ main{
     background-repeat: no-repeat;
     background-attachment: fixed;
     color: var(--primary-text-color);
-    font-size: 4rem;
+    font-size: clamp(1.5rem, 1.1vw, 3rem);
     font-weight: bolder;
     text-decoration: none;
     text-transform: capitalize;
@@ -321,18 +322,19 @@ main{
     justify-content: center;
     color: var(--primary-link-color);
     border-radius: clamp(1.5rem, 1.1vw, 5rem);
-    font-size: 1.5rem;
+    font-size: clamp(1.5rem, 1.1vw, 3rem);
     font-weight: bolder;
     border: 3px solid var(--primary-link-color);
 }
 
 .student-experience:hover{
     background-image: url("./img/background2.jpg") ;
+    background-position: left bottom;
+    background-attachment: fixed;
     color: var(--primary-text-color);
-    font-size: 4rem;
+    font-size: clamp(1.5rem, 1.1vw, 3rem);
     font-weight: bolder;
     border: none;
-    opacity: 0.9;
 }
 
 /* Projects grid */
