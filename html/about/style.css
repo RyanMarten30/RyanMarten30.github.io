@@ -142,15 +142,131 @@ nav a:hover{
     top: 7px;
 }
 
-@media screen and(max-width: 600px) {
-    nav{
-        background: var(--footer-color);
-        display: none;
-        display: relative;
-        width: 100%;
-        margin: auto;
-        /* look for more non responsive things */
+/* main */
+.main-about{
+    width: 85%;
+    margin: auto;
+}
+
+.main-about div{
+    margin: 0;
+    max-width: 100%;
+}
+
+/* introduction*/
+.intro-grid{
+    display: grid;
+    grid-template: 
+        "img title"
+        "img content" / minmax(min-content, 2fr) minmax(min-content, 4fr);
+    background-image: url("./img/background2.jpg");  
+    background-attachment: fixed;   
+    height: min(50vh, 10%);
+    grid-column-gap: 1.5em;
+    padding: 0.85rem;
+    width: 100%;
+    border-radius: 1.5em;
+    box-shadow: 0px 0px 6px 5px  #003566;
+    margin-bottom: 1.5em;
+    margin-top: 1.5em;
+}
+
+.intro-img{
+    grid-area: img;
+    width: 100%;
+    background: none;
+    border-radius: 1.5em;
+    opacity: 0.9;
+}
+
+.intro-title{
+    margin-top: 1.25rem;
+    grid-area: title;
+    background: none;
+    color: var(--primary-text-color);
+    font-size: clamp(2rem, 5vw, 20rem);
+    font-family: var(--primary-text-font);
+}
+
+.intro-text{
+    grid-area: content;
+    background: none;
+    color: white;
+    font-size: clamp(.8rem, 2vw, 1.5rem);
+    font-weight: bold;
+    line-height: 1.6rem;
+    margin: 0;
+    font-family: var(--primary-text-font);
+}
+
+@media screen and (max-width: 870px) {
+    .intro-img{
+       display: none;
     }
+
+    .intro-grid{
+        display: grid;
+        grid-template: 
+            "title"
+            "content" / auto ;
+        background-image: url(../../img/background2.jpg);        
+        height: min(50vh, 10%);
+        grid-column-gap: 1.5em;
+        padding: 1.25rem;
+        width: 100%;
+        border-radius: 1.5em;
+        box-shadow: 0px 0px 6px 5px  #003566;
+        margin: 1.5em auto;
+    }
+
+    .intro-title{
+        margin: 0;
+        grid-area: title;
+        background: none;
+        color: #CCA000;
+        font-size: clamp(3rem, 5vw, 20rem);
+        font-family: var(--primary-text-font);
+    }
+
+    .intro-title::before{
+        content: "> console.log(greeting);";
+        display: block;
+        font-size: clamp(.1rem,5vw, 0.42rem) ;
+        color: white;
+        background: transparent;
+        line-height: 1.6rem;
+        margin: 0;
+
+    }
+
+    .intro-text{
+        grid-area: content;
+        background: none;
+        color: white;
+        font-size: clamp(1rem, 2vw, 1.5rem);
+        font-weight: bold;
+    }
+}
+
+/* Banner do's don'ts */
+.dos-donts{
+    font-family: var(--primary-text-font);
+    font-weight: 400;
+    color: var(--primary-text-color);
+    position: relative;
+    margin-left: 32px;
+    font-size: clamp(0.7rem, 2.9vw, 6rem);
+}
+
+.dos-donts::before{
+    content: '#';
+    display: block;
+    width: 30px;
+    height: 30px;
+    color: var(--footer-color);
+    position: absolute;
+    top: .1rem;
+    left: -2.25rem;
 }
 
 /* About me grid */
@@ -159,21 +275,22 @@ nav a:hover{
     display: grid;
     grid-template: 
         "ps cocktails fich" 
-        "rain fr sun"
-        "xbox water ie" / minmax(min-content, 1fr) minmax(min-content, 1fr) minmax(min-content, 1fr);
-    grid-template-rows: auto;
-    gap: 1rem;
-    height: min(50vh, 10%);
-    padding: 0.85rem;
-    width: 100%;
+        "snow fr sun"
+        "xbox water ie" / minmax(10px, auto ) minmax(10px, auto) minmax(10px, auto);
+    gap: 0.5rem;
+    height: max(50vh, 80vh);
+    padding: 0.05rem;
+    max-width: 100%;
     border-radius: 1.5em;
     box-shadow: 0px 0px 6px 5px  #003566;
-    margin-bottom: 1.5em;
-    margin-top: 1.5em;
     background-image: url(../../img/background2.jpg);
     background-attachment: fixed ;
     text-align: center;
-    height: 70vh;
+    margin: 1.5em auto;
+}
+
+.about-me-grid div p{
+    font-size: clamp(0.45rem, 1.1vw, 3.5rem);
 }
 
 .ps{
@@ -186,15 +303,18 @@ nav a:hover{
     background-repeat: no-repeat;
     background-position: center center;
     background-blend-mode: luminosity;
+    background-size: 150%;
     padding:1em;
     display: flex;
     justify-content: center;
     align-items: center;
+    border-top-left-radius: 1.5em;
 }
 
 .empty{
     grid-area: fr;
     border: 1px solid white;
+    max-width: 100%;
 }
 
 .fich{
@@ -203,13 +323,16 @@ nav a:hover{
     border-left: 1px solid white;
     color: green;
     background-image: url(../../img/fich.jpeg);
-
     background-repeat: no-repeat;
+    background-size: 150%;
     background-position: center center;
     background-blend-mode: luminosity;
     padding:1em;
     display: flex;
     justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    border-top-right-radius: 1.5em;
 }
 
 .sun{
@@ -221,6 +344,7 @@ nav a:hover{
     background-image: url(../../img/sun.jpg);
     max-width: 100%;
     background-repeat: no-repeat;
+    background-size: 100%;
     background-position: center center;
     background-blend-mode: luminosity;
     padding:1em;
@@ -239,14 +363,16 @@ nav a:hover{
     background-repeat: no-repeat;
     background-position: center center;
     background-blend-mode: luminosity;
+    background-size: 200%;
     padding:1em;
     display: flex;
     justify-content: center;
     align-items: center;
+    border-bottom-right-radius: 1.5em;
 }
 
-.rain{
-    grid-area: rain;
+.snow{
+    grid-area: snow;
     border-bottom: 1px solid white;
     border-top: 1px solid white;
     border-right: 1px solid white;
@@ -256,6 +382,7 @@ nav a:hover{
     background-repeat: no-repeat;
     background-position: center center;
     background-blend-mode: luminosity;
+    background-size: 150%;
     padding:1em;
     display: flex;
     justify-content: center;
@@ -271,8 +398,9 @@ nav a:hover{
     background-image: url(../../img/cocktails.jpg);
     max-width: 100%;
     background-repeat: no-repeat;
-    background-position: center center;
+    background-position: center left;
     background-blend-mode: luminosity;
+    background-size: 120%;
     padding:1em;
     display: flex;
     justify-content: center;
@@ -306,8 +434,22 @@ nav a:hover{
     background-repeat: no-repeat;
     background-position: center center;
     background-blend-mode: luminosity;
+    background-size: contain;
     padding:1em;
     display: flex;
     justify-content: center;
     align-items: center;
+    border-bottom-left-radius: 1.5em;
+}
+
+/*  Styling footer */
+footer{
+    color: var(--primary-text-color);
+    font-size: clamp(1rem, 1.1vw, 1.5rem);
+    height: 20vh;
+    background-color: var(--footer-color);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
