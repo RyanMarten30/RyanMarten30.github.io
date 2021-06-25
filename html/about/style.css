@@ -142,6 +142,17 @@ nav a:hover{
     top: 7px;
 }
 
+@media screen and(max-width: 600px) {
+    nav{
+        background: var(--footer-color);
+        display: none;
+        display: relative;
+        width: 100%;
+        margin: auto;
+        /* look for more non responsive things */
+    }
+}
+
 /* About me grid */
 
 .about-me-grid{
