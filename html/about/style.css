@@ -202,17 +202,6 @@ nav a:hover{
     position: relative;
 }
 
-.intro-hi::before{
-    content: 'Hi,';
-    display: block;
-    position: absolute;
-    color: var(--primary-text-color);
-    font-size: clamp(6rem, 2vw, 9rem);
-    top: -9rem;
-    line-height: 1.25em;
-    filter: drop-shadow(10px 40px 5px white);
-}
-
 .intro-text-letter::before{
     content: "H";
     font-size: clamp(3.4rem, 2.5vw, 5.5rem);
