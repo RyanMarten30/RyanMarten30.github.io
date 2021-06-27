@@ -198,9 +198,6 @@ nav a:hover{
     font-family: var(--primary-text-font);
 }
 
-.intro-hi{
-    position: relative;
-}
 
 .intro-text-letter::before{
     content: "H";
